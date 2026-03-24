@@ -1,0 +1,27 @@
+.home-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgb(245, 247, 250), rgb(228, 231, 235));
+}
+
+.home-content {
+  text-align: center;
+  background: rgb(255, 255, 255);
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: rgb(34, 34, 34);
+}
+
+  h4{
+    font-size: large;
+    color: blueviolet;
+  }
