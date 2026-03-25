@@ -1,7 +1,10 @@
 const Invite = require("../models/invite");
+const Users = require("../models/user")
+const EmployeeProfile = require("../models/employeeProfile")
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const bcrypt = require("bcrypt");
+const { log } = require("console");
 require("dotenv").config();
 
 exports.sendInvite = async (req, res) => {
@@ -53,3 +56,50 @@ exports.sendInvite = async (req, res) => {
         });
     }
 };
+
+exports.getAllEmployees = async (req, res) => {
+
+    try {
+        const employees = await Users.findAll({
+            where: { role: "employee" },
+            attributes: ["id", "name", "email"],
+            include: [{
+                model: EmployeeProfile,
+                attributes: ["department", "designation"]
+            }]
+        })
+        res.json({ employees })
+    } catch (error) {
+        res.status(500).json({ message: "Server error" })
+    }
+}
+
+exports.adminUpdateProfile = async (req, res) => {
+    try {
+        const { userId } = req.params
+
+        const profile = await EmployeeProfile.findOne({
+            where: { user_id: userId }
+        })
+
+        if (!profile) {
+            return res.status(404).json({ message: "Employee not found" });
+        }
+
+        await profile.update({
+            department: req.body.department,
+            designation: req.body.designation,
+            location: req.body.location,
+            date_of_join: req.body.date_of_join,
+            current_experience: req.body.current_experience,
+            total_experience: req.body.total_experience,
+            employee_status: req.body.employee_status,
+            reporting_manager: req.body.reporting_manager
+        })
+
+        res.status(200).json({ message: "Employee details updated by admin", data: profile })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Server error" })
+    }
+}

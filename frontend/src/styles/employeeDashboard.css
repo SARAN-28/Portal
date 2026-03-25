@@ -105,8 +105,9 @@
     padding: 10px;
     width: 80px;
     font-size: 20px;
-    color: white;
-    background-color: blueviolet;
+    color: black;
+    font-weight: 600;
+    background-color: orange;
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -118,13 +119,51 @@
     transform: scale(1.1);
 }
 
+.emp-profile-back{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
 .emp-profile-back-btn{
-    margin-left: 85%;
     width: 150px;
     padding: 10px;
     border-radius: 10px;
     border: none;
     color: white;
+    font-size: 14px;
+    font-weight: 600;
     background-color: blueviolet;
     cursor: pointer;
+}
+.emp-profile-back-btn:hover{
+  background-color: rgb(146, 78, 210);
+    transform: scale(1.1);
+}
+
+.emp-profile-warning {
+  display: flex;
+  flex-direction: row;
+  background: rgb(241, 19, 19);
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emp-profile-warning button {
+  padding: 8px 15px;
+  border: none;
+  background: orange;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.emp-profile-warning button:hover {
+  background: rgb(230, 137, 0);
 }

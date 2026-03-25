@@ -61,10 +61,12 @@ exports.upsertProfile = async (req, res) => {
 
         const isComplete =
             profile.first_name &&
-            profile.age &&
-            profile.phone &&
+            profile.last_name &&
             profile.secondary_email &&
-            profile.address
+            profile.age &&
+            profile.address &&
+            profile.gender &&
+            profile.phone
 
         profile.is_profile_complete = !!isComplete;
         await profile.save();

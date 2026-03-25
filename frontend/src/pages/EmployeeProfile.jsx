@@ -65,9 +65,11 @@ const EmployeeProfile = () => {
 
             <h2>Employee Profile</h2>
 
-            <button className="emp-profile-back-btn" onClick={() => navigate("/employee-dashboard")}>
-                Back to Dashboard
-            </button>
+            <div className="emp-profile-back">
+                <button className="emp-profile-back-btn" onClick={() => navigate("/employee-dashboard")}>
+                    Back to Dashboard
+                </button>
+            </div>
 
             <div className="emp-profile-section">
 
