@@ -10,6 +10,8 @@ import AdminInvite from "./pages/AdminInvite";
 import AcceptInvite from "./pages/AcceptInvite";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import EmployeeProfile from "./pages/EmployeeProfile";
+import AdminEmployeesList from "./pages/AdminEmployeesList";
+import AdminEmployeeView from "./pages/AdminEmployeeView";
 
 function App() {
     return (
@@ -27,9 +29,13 @@ function App() {
 
                 <Route path="/admin-invite" element={<ProtectedRoute role="admin"><AdminInvite /></ProtectedRoute>} />
 
-                <Route path="/accept-invite" element={<ProtectedRoute role="employee"><AcceptInvite /></ProtectedRoute>} />
+                <Route path="/accept-invite" element={<AcceptInvite />} />
 
                 <Route path="/employee-profile" element={<ProtectedRoute role="employee"><EmployeeProfile /></ProtectedRoute>} />
+
+                <Route path="/admin-employees" element={<ProtectedRoute role="admin"><AdminEmployeesList /></ProtectedRoute>} />
+                
+                <Route path="/admin/update-employee/:id" element={<ProtectedRoute role="admin"><AdminEmployeeView /></ProtectedRoute>} />
             </Routes>
 
             <ToastContainer position="bottom-right" autoClose={2000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover />

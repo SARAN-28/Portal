@@ -14,6 +14,11 @@ const EmployeeProfile = sequelize.define("EmployeeProfile", {
         allowNull: false
     },
 
+    employee_id: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
     // Basic Info
     first_name: {
         type: DataTypes.STRING

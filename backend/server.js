@@ -28,6 +28,8 @@ app.get("/", (req, res) => {
 
 sequelize.authenticate().then(async () => {
 
+    await sequelize.sync()
+
     await seedAdmin();
 
     app.listen(process.env.PORT, () => {

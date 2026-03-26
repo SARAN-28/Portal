@@ -31,18 +31,27 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="admin-dashboard">
+    <div className="admin-dashboard-container">
+      <div className="admin-dashboard-sidebar">
 
-      <h1>Admin Dashboard</h1>
-      <h3>Welcome Admin</h3>
+        <h3>Dashboard</h3>
 
-      <button className="invite-btn" onClick={() => setShowInvite(true)}>
-        Send Employee Invite
-      </button>
+        <button className="invite-btn" onClick={() => setShowInvite(true)}>
+          Send Employee Invite
+        </button>
+        {showInvite && (
+          <AdminInvite close={() => setShowInvite(false)} />
+        )}
 
-      {showInvite && (
-        <AdminInvite close={() => setShowInvite(false)} />
-      )}
+        <button className="emp-list-btn" onClick={() => navigate("/admin-employees")}>
+          Employees List
+        </button>
+      </div>
+
+      <div className="admin-dashboard-content">
+        <h1>Admin Dashboad</h1>
+        <h3>Welcome Admin </h3>
+      </div>
 
     </div>
   );

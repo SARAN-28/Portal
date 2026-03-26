@@ -4,6 +4,7 @@ const sendEmail = require("../utils/mailer");
 const User = require("../models/user");
 const Invite = require("../models/invite");
 const OtpCode = require("../models/otpCode");
+const EmployeeProfile = require("../models/employeeProfile");
 
 exports.signup = async (req, res) => {
 
@@ -340,7 +341,7 @@ exports.resetPassword = async (req, res) => {
 
 exports.acceptInvite = async (req, res) => {
 
-    const { token, password} = req.body;
+    const { token, password } = req.body;
 
     try {
         const invite = await Invite.findOne({
@@ -359,17 +360,21 @@ exports.acceptInvite = async (req, res) => {
             });
         }
 
-         const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-        await User.create({
+        const newUser = await User.create({
             name: invite.name,
             email: invite.email,
-            employee_id: invite.employee_id,
             password: hashedPassword,
             role: invite.role
         });
 
-        // await invite.destroy();
+        await EmployeeProfile.create({
+            user_id: newUser.id,
+            employee_id: invite.employee_id
+        })
+
+        await invite.destroy();
 
         res.json({
             message: "Account created successfully"

@@ -65,7 +65,7 @@ exports.getAllEmployees = async (req, res) => {
             attributes: ["id", "name", "email"],
             include: [{
                 model: EmployeeProfile,
-                attributes: ["department", "designation"]
+                attributes: ["employee_id","department", "designation"]
             }]
         })
         res.json({ employees })
