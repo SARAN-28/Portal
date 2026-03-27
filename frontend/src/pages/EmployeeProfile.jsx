@@ -70,9 +70,9 @@ const EmployeeProfile = () => {
     return (
         <div className="emp-profile-container">
 
-            <h2>Employee Profile</h2>
+            <div className="emp-profile-head">
+                <h2>My Profile</h2>
 
-            <div className="emp-profile-back">
                 <button className="emp-profile-back-btn" onClick={() => navigate("/employee-dashboard")}>
                     Back to Dashboard
                 </button>
@@ -83,13 +83,13 @@ const EmployeeProfile = () => {
                 <div className="emp-profile-basic">
                     <h3><span style={{color: "green"}}>Basic Information</span></h3>
 
-                    <label>First Name</label>
+                    <label>First Name <span style={{color:"red"}}>*</span></label>
                     <input name="first_name" value={profile.first_name || ""} onChange={handleChange} disabled={isDisabled("first_name")} className={getInputClass("first_name")} />
 
-                    <label>Last Name</label>
+                    <label>Last Name <span style={{color:"red"}}>*</span></label>
                     <input name="last_name" value={profile.last_name || ""} onChange={handleChange} disabled={isDisabled("last_name")} className={getInputClass("last_name")} />
 
-                    <label>Secondary Email</label>
+                    <label>Secondary Email <span style={{color:"red"}}>*</span></label>
                     <input name="secondary_email" value={profile.secondary_email || ""} onChange={handleChange} disabled={isDisabled("secondary_email")} className={getInputClass("secondary_email")} />
                 </div>
 
@@ -128,16 +128,16 @@ const EmployeeProfile = () => {
                 <div className="emp-profile-personal">
                     <h3><span style={{color: "green"}}>Personal Information</span></h3>
 
-                    <label>Age</label>
+                    <label>Age <span style={{color:"red"}}>*</span></label>
                     <input name="age" value={profile.age || ""} onChange={handleChange} disabled={isDisabled("age")} className={getInputClass("age")} />
 
                     <label>Blood Group</label>
                     <input name="blood_group" value={profile.blood_group || ""} onChange={handleChange} disabled={isDisabled("blood_group")} className={getInputClass("blood_group")} />
 
-                    <label>Address</label>
+                    <label>Address <span style={{color:"red"}}>*</span></label>
                     <input name="address" value={profile.address || ""} onChange={handleChange} disabled={isDisabled("address")} className={getInputClass("address")} />
 
-                    <label>Gender</label>
+                    <label>Gender <span style={{color:"red"}}>*</span></label>
                     <input name="gender" value={profile.gender || ""} onChange={handleChange} disabled={isDisabled("gender")} className={getInputClass("gender")} />
 
                     <label>About Me</label>
@@ -157,7 +157,7 @@ const EmployeeProfile = () => {
                 <div className="emp-profile-contact">
                     <h3><span style={{color: "green"}}>Contact Information</span></h3>
 
-                    <label>Phone</label>
+                    <label>Phone <span style={{color:"red"}}>*</span></label>
                     <input name="phone" value={profile.phone || ""} onChange={handleChange} disabled={isDisabled("phone")} className={getInputClass("phone")} />
 
                     <label>Work Address</label>

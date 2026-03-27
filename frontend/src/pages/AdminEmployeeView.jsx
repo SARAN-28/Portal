@@ -83,13 +83,10 @@ const AdminEmployeeView = () => {
     return (
         <div className="employee-profile-container">
 
-            <h2>Employee Details</h2>
+            <div className="employee-profile-head">
+                <h2>Employee Details</h2>
 
-            <div className="employee-profile-back">
-                <button
-                    className="employee-profile-back-btn"
-                    onClick={() => navigate("/admin-employees")}
-                >
+                <button className="employee-profile-back-btn" onClick={() => navigate("/admin-employees")}>
                     Back to Employees List
                 </button>
             </div>

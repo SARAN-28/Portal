@@ -1,34 +1,230 @@
-.admin-dashboard {
-  text-align: center;
-  margin-top: 100px;
+.admin-dashboard-container {
+  display: flex;
+  height: 100vh;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.admin-dashboard h1 {
-  font-size: 36px;
-  color: rgb(51, 51, 51);
-  margin-bottom: 10px;
-}
-
-.admin-dashboard h3 {
-  font-size: 20px;
-  color: rgb(119, 119, 119);
-  margin-bottom: 30px;
-}
-
-.invite-btn {
-  background-color: rgb(24, 195, 30);
+.admin-dashboard-sidebar {
+  width: 200px;
+  background: grey;
   color: white;
+  padding: 20px;
+}
+
+.admin-dashboard-sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.admin-dashboard-sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 6px;
   cursor: pointer;
-  user-select: none;
+  background: rgb(52, 73, 94);
+  color: white;
+  border-radius: 6px;
   transition: transform 0.3s;
 }
 
-.invite-btn:hover{
-  background-color: rgb(69, 160, 73);
+.admin-dashboard-sidebar button:hover {
+  background: cyan;
   transform: scale(1.1);
+  color: black;
+}
+
+.admin-dashboard-content {
+  display: flex;
+  padding: 30px;
+}
+
+.admin-dashboard-content h3 {
+  align-content: center;
+  font-size: 30px;
+}
+
+.admin-emp-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.admin-emp-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.admin-back-dashboard {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.admin-back-dashboard:hover {
+  transform: scale(1.1);
+}
+
+.admin-emp-list-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: rgb(255, 255, 255);
+}
+
+.admin-emp-list-table thead {
+  background-color: rgb(1, 198, 253);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.admin-emp-list-table th,
+.admin-emp-list-table td {
+  padding: 12px;
+  border: 1px solid rgb(221, 221, 221);
+  text-align: center;
+}
+
+.admin-emp-list-table tbody tr:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.admin-emp-view-btn {
+  background-color: greenyellow;
+  color: black;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-emp-view-btn:hover {
+  background-color: rgb(153, 231, 36);
+}
+
+.employee-profile-container {
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.employee-profile-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(51, 51, 51);
+}
+
+.employee-profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.employee-profile-section>div {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  padding: 20px;
+  background: rgb(250, 250, 250);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.employee-profile-section h3 {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 5px solid blueviolet;
+  border-radius: 5px;
+}
+
+.employee-profile-section label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: rgb(85, 85, 85);
+}
+
+.employee-profile-section input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid rgb(204, 204, 204);
+  font-size: 16px;
+  font-weight: 200;
+  transition: 0.2s;
+}
+
+.employee-profile-section input:focus {
+  border-color: rgb(0, 255, 0);
+  outline: none;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+}
+
+.employee-profile-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.employee-profile-btn button {
+  padding: 10px;
+  width: 80px;
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+  background-color: orange;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.employee-profile-btn button:hover {
+  background-color: rgb(146, 78, 210);
+  transform: scale(1.1);
+}
+
+.employee-profile-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.employee-profile-back-btn {
+  width: 180px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.employee-profile-back-btn:hover {
+  background-color: rgb(146, 78, 210);
+  transform: scale(1.1);
+}
+
+.input-employee {
+  border: 2px solid red;
+  background-color: rgb(252, 193, 193);
+}
+
+.input-admin {
+  border: 2px solid green;
+  background-color: rgb(208, 245, 200);
+}
+
+input:disabled {
+  cursor: not-allowed;
 }

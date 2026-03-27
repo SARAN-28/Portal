@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "../styles/adminDashboard.css";
 
 const AdminEmployeesList = () => {
 
@@ -22,10 +23,15 @@ const AdminEmployeesList = () => {
     }, []);
 
     return (
-        <div style={{ padding: "30px" }}>
-            <h2>All Employees</h2>
 
-            <table border="1">
+
+        <div className="admin-emp-list-container">
+            <div className="admin-emp-list-head">
+                <h2>All Employees</h2>
+
+                <button className="admin-back-dashboard" onClick={() => navigate("/admin-dashboard")}>Back to Dashboard</button>
+            </div>
+            <table className="admin-emp-list-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -45,7 +51,7 @@ const AdminEmployeesList = () => {
                             <td>{emp.email}</td>
                             <td>{emp.EmployeeProfile?.employee_id || "-"}</td>
                             <td>{emp.EmployeeProfile?.department || "-"}</td>
-                            <td> <button onClick={() => navigate(`/admin/update-employee/${emp.id}`)}>View</button></td>
+                            <td> <button className="admin-emp-view-btn" onClick={() => navigate(`/admin/update-employee/${emp.id}`)}>View</button></td>
                         </tr>
                     ))}
                 </tbody>
