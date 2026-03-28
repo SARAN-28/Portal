@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"
+import "../styles/dialog.css";
 
 const AdminInvite = ({ close }) => {
 
@@ -46,7 +47,7 @@ const AdminInvite = ({ close }) => {
             <div className="modal">
 
                 <span className="close-btn" onClick={close}>
-                    <i className="fa-solid fa-circle-xmark" style={{ color: "#ff0505" }}></i>
+                    <i className="fa-solid fa-circle-xmark"></i>
                 </span>
 
                 <h3>Send Employee Invitations</h3>

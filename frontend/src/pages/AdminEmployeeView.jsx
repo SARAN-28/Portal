@@ -87,7 +87,7 @@ const AdminEmployeeView = () => {
                 <h2>Employee Details</h2>
 
                 <button className="employee-profile-back-btn" onClick={() => navigate("/admin-employees")}>
-                    Back to Employees List
+                  ←
                 </button>
             </div>
 
@@ -195,7 +195,7 @@ const AdminEmployeeView = () => {
 
             </div>
 
-            <div className="emp-profile-btn">
+            <div className="employee-profile-edit-save-btn">
                 {!editMode ? (
                     <button onClick={() => setEditMode(true)}>Edit</button>
                 ) : (

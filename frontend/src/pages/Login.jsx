@@ -70,7 +70,7 @@ const Login = ({ close, openSignup, openOtp, openForgot }) => {
                     <h3>Login Form</h3>
 
                     <span className="close-btn" onClick={close}>
-                        <i className="fa-solid fa-circle-xmark" style={{ color: "#ff0505" }}></i>
+                        <i className="fa-solid fa-circle-xmark"></i>
                     </span>
 
                     <input name="email" placeholder="Email" value={formData.email} onChange={handleChange} disabled={loading} />

@@ -23,39 +23,39 @@ const AdminEmployeesList = () => {
     }, []);
 
     return (
-
-
-        <div className="admin-emp-list-container">
-            <div className="admin-emp-list-head">
+        <div className="admin-employee-list-container">
+            <div className="admin-employee-list-head">
                 <h2>All Employees</h2>
 
-                <button className="admin-back-dashboard" onClick={() => navigate("/admin-dashboard")}>Back to Dashboard</button>
+                <button className="admin-back-dashboard" onClick={() => navigate("/admin-dashboard")}>←</button>
             </div>
-            <table className="admin-emp-list-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>EMAIL</th>
-                        <th>EMPLOYEE ID</th>
-                        <th>DEPARTMENT</th>
-                        <th>ACTION</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {employees.map((emp) => (
-                        <tr key={emp.id}>
-                            <td>{emp.id}</td>
-                            <td>{emp.name}</td>
-                            <td>{emp.email}</td>
-                            <td>{emp.EmployeeProfile?.employee_id || "-"}</td>
-                            <td>{emp.EmployeeProfile?.department || "-"}</td>
-                            <td> <button className="admin-emp-view-btn" onClick={() => navigate(`/admin/update-employee/${emp.id}`)}>View</button></td>
+            <div className="table-wrapper">
+                <table className="admin-employee-list-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>EMPLOYEE ID</th>
+                            <th>DEPARTMENT</th>
+                            <th>ACTION</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+
+                    <tbody>
+                        {employees.map((emp) => (
+                            <tr key={emp.id}>
+                                <td>{emp.id}</td>
+                                <td>{emp.name}</td>
+                                <td>{emp.email}</td>
+                                <td>{emp.EmployeeProfile?.employee_id || "-"}</td>
+                                <td>{emp.EmployeeProfile?.department || "-"}</td>
+                                <td> <button className="admin-employee-view-btn" onClick={() => navigate(`/admin/update-employee/${emp.id}`)}>View</button></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

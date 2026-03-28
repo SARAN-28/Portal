@@ -31,7 +31,7 @@ const VerifyResetOtp = ({ email, close, openReset }) => {
             <div className="modal">
 
                 <span className="close-btn" onClick={close}>
-                    <i className="fa-solid fa-circle-xmark" style={{ color: "#ff0505" }}></i>
+                    <i className="fa-solid fa-circle-xmark"></i>
                 </span>
 
                 <h3>Verify OTP</h3>

@@ -1,194 +1,191 @@
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(15, 23, 42);
+}
+
 .admin-dashboard-container {
   display: flex;
   height: 100vh;
-  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(15, 23, 42);
+  color: rgb(226, 232, 240);
 }
 
 .admin-dashboard-sidebar {
-  width: 200px;
-  background: grey;
-  color: white;
-  padding: 20px;
+  width: 240px;
+  background: rgb(2, 6, 23);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgb(30, 41, 59);
 }
 
 .admin-dashboard-sidebar h3 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: rgb(167, 139, 250);
 }
 
 .admin-dashboard-sidebar button {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
   border: none;
   cursor: pointer;
-  background: rgb(52, 73, 94);
-  color: white;
-  border-radius: 6px;
-  transition: transform 0.3s;
+  background: rgb(30, 41, 59);
+  color: rgb(226, 232, 240);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .admin-dashboard-sidebar button:hover {
-  background: cyan;
-  transform: scale(1.1);
-  color: black;
+  background: rgb(124, 58, 237);
+  color: white;
+  transform: translateX(5px);
 }
 
 .admin-dashboard-content {
-  display: flex;
-  padding: 30px;
-}
-
-.admin-dashboard-content h3 {
-  align-content: center;
-  font-size: 30px;
-}
-
-.admin-emp-list-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
+  padding: 40px;
+  background: rgb(15, 23, 42);
 }
 
-.admin-emp-list-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
+.admin-dashboard-content h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: rgb(248, 250, 252);
 }
 
-.admin-back-dashboard {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: blueviolet;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-.admin-back-dashboard:hover {
-  transform: scale(1.1);
-}
-
-.admin-emp-list-table {
-  width: 100%;
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
   margin-top: 20px;
-  border-collapse: collapse;
-  background-color: rgb(255, 255, 255);
 }
 
-.admin-emp-list-table thead {
-  background-color: rgb(1, 198, 253);
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-}
-
-.admin-emp-list-table th,
-.admin-emp-list-table td {
-  padding: 12px;
-  border: 1px solid rgb(221, 221, 221);
-  text-align: center;
-}
-
-.admin-emp-list-table tbody tr:hover {
-  background-color: rgb(241, 241, 241);
-}
-
-.admin-emp-view-btn {
-  background-color: greenyellow;
-  color: black;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.admin-emp-view-btn:hover {
-  background-color: rgb(153, 231, 36);
-}
-
-.employee-profile-container {
-  padding: 30px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.employee-profile-container h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: rgb(51, 51, 51);
-}
-
-.employee-profile-section {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.employee-profile-section>div {
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 12px;
+.dashboard-card {
+  background: rgb(30, 41, 59);
   padding: 20px;
-  background: rgb(250, 250, 250);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.employee-profile-section h3 {
-  margin-bottom: 15px;
-  padding-left: 10px;
-  border-left: 5px solid blueviolet;
-  border-radius: 5px;
-}
-
-.employee-profile-section label {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-  color: rgb(85, 85, 85);
-}
-
-.employee-profile-section input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid rgb(204, 204, 204);
-  font-size: 16px;
-  font-weight: 200;
-  transition: 0.2s;
-}
-
-.employee-profile-section input:focus {
-  border-color: rgb(0, 255, 0);
-  outline: none;
-  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
-}
-
-.employee-profile-btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.employee-profile-btn button {
-  padding: 10px;
-  width: 80px;
-  font-size: 20px;
-  color: black;
-  font-weight: 600;
-  background-color: orange;
-  border: none;
   border-radius: 15px;
-  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
 
-.employee-profile-btn button:hover {
-  background-color: rgb(146, 78, 210);
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+  margin-bottom: 10px;
+  color: rgb(167, 139, 250);
+}
+
+.dashboard-card p {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.admin-employee-list-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.admin-employee-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin-employee-list-head h2 {
+  color: rgb(248, 250, 252);
+}
+
+.admin-back-dashboard {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(124, 58, 237);
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-back-dashboard:hover {
+  background: rgb(91, 33, 182);
   transform: scale(1.1);
+}
+
+.admin-employee-list-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: rgb(30, 41, 59);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  background: rgb(30, 41, 59);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.admin-employee-list-table thead {
+  background-color: rgb(124, 58, 237);
+  color: white;
+}
+
+.admin-employee-list-table th {
+  padding: 14px;
+  font-size: 14px;
+}
+
+.admin-employee-list-table td {
+  padding: 14px;
+  color: rgb(226, 232, 240);
+  text-align: center;
+}
+
+.admin-employee-list-table tbody tr {
+  transition: 0.2s;
+}
+
+.admin-employee-list-table tbody tr:hover {
+  background: rgb(51, 65, 85);
+}
+
+.admin-employee-view-btn {
+  background: rgb(34, 197, 94);
+  color: black;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-employee-view-btn:hover {
+  background: rgb(22, 163, 74);
+  transform: scale(1.05);
+}
+
+.employee-profile-container {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  color: rgb(226, 232, 240);
 }
 
 .employee-profile-head {
@@ -198,33 +195,110 @@
   margin-bottom: 30px;
 }
 
+.employee-profile-head h2 {
+  color: rgb(248, 250, 252);
+}
+
 .employee-profile-back-btn {
-  width: 180px;
-  padding: 8px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: none;
+  background: rgb(124, 58, 237);
   color: white;
-  font-size: 14px;
-  font-weight: 600;
-  background-color: blueviolet;
+  font-size: 20px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .employee-profile-back-btn:hover {
-  background-color: rgb(146, 78, 210);
+  background: rgb(91, 33, 182);
   transform: scale(1.1);
 }
 
-.input-employee {
-  border: 2px solid red;
-  background-color: rgb(252, 193, 193);
+.employee-profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.input-admin {
-  border: 2px solid green;
-  background-color: rgb(208, 245, 200);
+.employee-profile-section>div {
+  background: rgb(30, 41, 59);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.employee-profile-section h3 {
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 4px solid rgb(124, 58, 237);
+  color: rgb(167, 139, 250);
+}
+
+.employee-profile-section label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgb(148, 163, 184);
+}
+
+.employee-profile-section input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid rgb(51, 65, 85);
+  background: rgb(2, 6, 23);
+  color: rgb(226, 232, 240);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.employee-profile-section input:focus {
+  border-color: rgb(124, 58, 237);
+  outline: none;
+  box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
 }
 
 input:disabled {
+  opacity: 0.7;
   cursor: not-allowed;
+}
+
+.input-employee {
+  border-left: 4px solid rgb(25, 218, 11);
+  box-shadow: 0 0 5px rgb(4, 255, 33);
+}
+
+.input-admin {
+  border-left: 4px solid rgb(255, 0, 0);
+  box-shadow: 0 0 5px rgb(255, 13, 13);
+}
+
+.employee-profile-edit-save-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.employee-profile-edit-save-btn button {
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: rgb(124, 58, 237);
+  color: white;
+  transition: 0.3s;
+}
+
+.employee-profile-edit-save-btn button:hover {
+  background: rgb(91, 33, 182);
+  transform: scale(1.05);
 }

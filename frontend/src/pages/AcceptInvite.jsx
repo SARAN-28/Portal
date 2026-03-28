@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { toast } from "react-toastify";
+import "../styles/dialog.css";
 
 const AcceptInvite = () => {
 
@@ -55,7 +56,7 @@ const AcceptInvite = () => {
             <div className="modal">
 
                 <span className="close-btn" onClick={() => navigate("/")}>
-                    <i className="fa-solid fa-circle-xmark" style={{ color: "#ff0505" }}></i>
+                    <i className="fa-solid fa-circle-xmark"></i>
                 </span>
 
                 <h3>Set Password</h3>

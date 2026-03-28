@@ -65,7 +65,7 @@ const SignUp = ({ close, openLogin }) => {
                     <h3>SignUp Form</h3>
 
                     <span className="close-btn" onClick={close}>
-                        <i className="fa-solid fa-circle-xmark" style={{ color: "#ff0505" }}></i>
+                        <i className="fa-solid fa-circle-xmark"></i>
                     </span>
 
                     <input name="name" placeholder="Name" value={formData.name} onChange={handleChange} />

@@ -63,7 +63,6 @@ const EmployeeDashboard = () => {
 
       <div className="employee-dashboard-content">
         <h1>Employee Dashboard</h1>
-        <h3>Welcome Employee</h3>
       </div>
 
     </div>

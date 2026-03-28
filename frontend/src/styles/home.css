@@ -3,25 +3,99 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgb(245, 247, 250), rgb(228, 231, 235));
+  background: linear-gradient(135deg, rgb(2, 6, 23), rgb(15, 23, 42));
+  color: rgb(226, 232, 240);
 }
 
 .home-content {
   text-align: center;
-  background: rgb(255, 255, 255);
+  background: rgba(30, 41, 59, 0.8); 
   padding: 50px 60px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
 }
 
 .home-content h1 {
-  font-size: 36px;
+  font-size: 40px;
   margin-bottom: 15px;
-  color: rgb(34, 34, 34);
 }
 
-  h4{
-    font-size: large;
-    color: blueviolet;
-  }
+.home-content span {
+  color: rgb(167, 139, 250);
+}
+
+.home-subtitle {
+  font-size: 16px;
+  color: rgb(148, 163, 184);
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.primary-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgb(124, 58, 237), rgb(167, 139, 250));
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.5);
+}
+
+.secondary-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid rgb(124, 58, 237);
+  background: transparent;
+  color: rgb(167, 139, 250);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary-btn:hover {
+  background: rgb(124, 58, 237);
+  color: white;
+}
+
+.home-features {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: rgb(2, 6, 23);
+  padding: 20px;
+  border-radius: 15px;
+  width: 180px;
+  transition: 0.3s;
+  border: 1px solid rgb(30, 41, 59);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgb(124, 58, 237);
+}
+
+.feature-card h4 {
+  margin-bottom: 10px;
+  color: rgb(167, 139, 250);
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: rgb(148, 163, 184);
+}

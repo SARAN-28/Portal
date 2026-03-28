@@ -57,7 +57,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          <h2>PORTAL</h2>
+          <h2 onClick={() => navigate("/")}>PORTAL</h2>
         </div>
 
         <div className="nav-buttons">

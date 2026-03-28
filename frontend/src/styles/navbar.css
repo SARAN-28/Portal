@@ -6,43 +6,45 @@
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: linear-gradient(87deg, rgba(166, 0, 255, 1) 0%, rgba(242, 51, 188, 1) 100%);
-  color: white;
+  padding: 15px 30px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(30, 41, 59);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
-    
+
 .logo h2 {
-  margin-left: 20px;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 2px;
-  user-select: none;
+  color: rgb(167, 139, 250);
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.nav-buttons{
-    display: flex;
-    gap: 10px;
+.nav-buttons {
+  display: flex;
+  gap: 12px;
 }
 
-.nav-btn{
-  margin-left: 10px;
-  padding: 8px 14px;
+.nav-btn {
+  padding: 8px 18px;
   border: none;
   cursor: pointer;
-  user-select: none;
-  background-color: rgb(23, 209, 23);
+  background: linear-gradient(135deg, rgb(124, 58, 237), rgb(167, 139, 250));
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 8px;
-  letter-spacing: 1px;
-  transition: background 0.2s ease-in;
+  border-radius: 20px; 
+  transition: all 0.3s ease;
 }
 
-.nav-btn:hover{
-  background-color: rgb(24, 143, 24);
-  transform: scale(1.1);
-  color: black;
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
 }

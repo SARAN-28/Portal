@@ -1,8 +1,8 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
+  background: rgba(10, 10, 30, 0.7);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,13 +10,14 @@
 }
 
 .modal {
-  background: rgb(255, 255, 255);
+  background: linear-gradient(145deg, rgb(15, 23, 42), rgb(30, 41, 59));
+  color: white;
   width: 420px;
   max-width: 90%;
   border-radius: 14px;
   padding: 24px;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
   animation: scaleInCenter 0.3s ease;
   font-family: "Times New Roman", Times, serif;
 }
@@ -30,20 +31,22 @@
   text-align: center;
   margin-bottom: 18px;
   font-size: 22px;
-  color: rgb(34, 34, 34);
+  color: rgb(167, 139, 250);
 }
 
 .modal input {
   padding: 12px;
   margin-bottom: 14px;
   border-radius: 8px;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgb(51, 65, 85);
+  background: rgb(2, 6, 23);
+  color: white;
   font-size: 14px;
 }
 
 .modal input:focus {
-  border-color: rgb(70, 195, 229);
-  box-shadow: 0 0 5px rgba(79, 70, 229, 0.2);
+  border-color: rgb(168, 85, 247);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
   outline: none;
 }
 
@@ -55,37 +58,39 @@
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
-  background: linear-gradient(135deg, rgb(99, 102, 241), rgb(79, 70, 229));
+  background: linear-gradient(135deg, rgb(124, 58, 237), rgb(167, 139, 250));
   color: white;
   letter-spacing: 1px;
   transition: transform 0.2s ease;
 }
 
 .modal button[type="submit"]:hover {
-  transform: scale(0.9);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
 }
 
 .close-btn {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
   font-size: 22px;
   cursor: pointer;
+  color: rgb(248, 113, 113);
 }
 
 .close-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .login-signup-text {
   margin-top: 14px;
   text-align: center;
   font-size: 14px;
-  color: rgb(68, 68, 68);
+  color: rgb(203, 213, 245);
 }
 
 .login-signup-link {
-  color: rgb(79, 70, 229);
+  color: rgb(56, 189, 248);
   cursor: pointer;
   font-weight: bold;
 }
@@ -96,7 +101,7 @@
 
 @keyframes scaleInCenter {
   from {
-    transform: scale(0.9);
+    transform: scale(0.85);
     opacity: 0;
   }
   to {
@@ -105,14 +110,14 @@
   }
 }
 
-.forgot-link{
+.forgot-link {
   font-size: 14px;
-  color: rgb(0, 123, 255);
+  color: rgb(56, 189, 248);
   cursor: pointer;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.forgot-link:hover{
+.forgot-link:hover {
   text-decoration: underline;
 }
