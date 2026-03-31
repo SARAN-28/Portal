@@ -7,6 +7,8 @@ import "../styles/employeeDashboard.css"
 const EmployeeDashboard = () => {
 
   const [profileComplete, setProfileComplete] = useState(true);
+  const [attendance, setAttendance] = useState([])
+  const [todayRecord, setTodayRecord] = useState(null)
 
   const navigate = useNavigate();
 
@@ -26,46 +28,60 @@ const EmployeeDashboard = () => {
     checkProfile()
   }, []);
 
-  const checkProfile = async ()=>{
-    try{
+  const checkProfile = async () => {
+    try {
       const res = await api.get("/employee/profile")
 
-      if(!res.data.profile || !res.data.profile.is_profile_complete){
+      if (!res.data.profile || !res.data.profile.is_profile_complete) {
         setProfileComplete(false)
-      }else{
+      } else {
         setProfileComplete(true)
       }
-    }catch (error){
+    } catch (error) {
       console.log(error);
     }
   }
 
+  const fetchAttendance = async () => {
+  try {
+    const res = await api.get("/attendance/my");
+
+    setAttendance(res.data.attendance);
+
+    const today = new Date().toISOString().split("T")[0];
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
   return (
     <>
-    {!profileComplete &&(
-      <div className="emp-profile-warning">
-      Please complete your profile
+      {!profileComplete && (
+        <div className="emp-profile-warning">
+          Please complete your profile
 
-      <button onClick={()=>navigate("/employee-profile")}>
-      Complete profile now
-      </button>
-      
-      </div>
-    )}
+          <button onClick={() => navigate("/employee-profile")}>
+            Complete profile now
+          </button>
+
+        </div>
+      )}
       <div className="employee-dashboard-container">
-      <div className="employee-dashboard-sidebar">
-        <h3>Dashboard</h3>
+        <div className="employee-dashboard-sidebar">
+          <h3>Dashboard</h3>
 
-        <button onClick={() => navigate("/employee-profile")}>
-          Profile
-        </button>
+          <button onClick={() => navigate("/employee-profile")}>
+            Profile
+          </button>
+        </div>
+
+        <div className="employee-dashboard-content">
+          <h1>Employee Dashboard</h1>
+        </div>
+
       </div>
-
-      <div className="employee-dashboard-content">
-        <h1>Employee Dashboard</h1>
-      </div>
-
-    </div>
     </>
   );
 };

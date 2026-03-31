@@ -54,6 +54,8 @@
   padding: 11px;
   margin-top: 10px;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
   border: none;
   cursor: pointer;
   font-size: 18px;
