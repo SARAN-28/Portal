@@ -6,13 +6,14 @@ import VerifyOtp from "../pages/Verifyotp";
 import ForgotPassword from "../pages/ForgotPassword";
 import VerifyResetOtp from "../pages/VerifyResetOtp";
 import ResetPassword from "../pages/ResetPassword";
-import "../styles/navbar.css";
+import styles from "../styles/navbar.module.css"
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
@@ -55,20 +56,20 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar">
-        <div className="logo">
+      <nav className={styles.navbar}>
+        <div className={styles.logo}>
           <h2 onClick={() => navigate("/")}>PORTAL</h2>
         </div>
 
-        <div className="nav-buttons">
+        <div className={styles['nav-buttons']}>
           {isLoggedIn ? (
-            <button className="nav-btn" onClick={handleLogout}>
+            <button className={styles['nav-btn']} onClick={handleLogout}>
               Logout
             </button>
           ) : (
             <>
-              <button className="nav-btn" onClick={() => setShowLogin(true)}>Login</button>
-              <button className="nav-btn" onClick={() => setShowSignup(true)}>Signup</button>
+              <button className={styles['nav-btn']} onClick={() => setShowLogin(true)}>Login</button>
+              <button className={styles['nav-btn']} onClick={() => setShowSignup(true)}>Signup</button>
             </>
           )}
         </div>

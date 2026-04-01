@@ -24,6 +24,11 @@ const Attendance = sequelize.define("Attendance", {
         allowNull: true
     },
 
+    effective_hours: {
+        type: DataTypes.FLOAT,
+        allowNull: true
+    },
+
     total_hours: {
         type: DataTypes.FLOAT,
         allowNull: true

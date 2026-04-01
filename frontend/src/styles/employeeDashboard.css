@@ -209,3 +209,28 @@ input:disabled {
   border-left: 4px solid rgb(255, 0, 0);
   box-shadow: 0 0 5px rgb(255, 13, 13);
 }
+
+.employee-clock-in-out-btn button {
+  background-image: linear-gradient(to right, rgb(124, 58, 237) 0%, rgb(167, 139, 250) 51%, rgb(124, 58, 237) 100%);
+}
+
+.employee-clock-in-out-btn button{
+  margin: 32px 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.employee-clock-in-out-btn button:hover {
+  background-position: right center;
+  color: white;
+  text-decoration: none;
+}

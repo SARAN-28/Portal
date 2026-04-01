@@ -1,4 +1,4 @@
-const Attendance = require("../models/attendance")
+const Attendance = require("../models")
 
 const getTodayDate = () => {
     return new Date().toISOString().split("T")[0]
@@ -9,12 +9,13 @@ exports.clockIn = async (req, res) => {
         const userId = req.user.id
         const today = getTodayDate();
 
-        const existing = await Attendance.findOne({
-            where: { user_id: userId, date: today }
+        const lastRecord = await Attendance.findOne({
+            where: { user_id: userId, date: today },
+            order:[["createdAt","DESC"]]
         })
-        if (existing) {
+        if (lastRecord && !lastRecord.clock_out) {
             return res.status(400).json({
-                message: "Already Clocked-in Today"
+                message: "Already Clocked-in Please Clock-Out"
             })
         }
 
@@ -40,7 +41,8 @@ exports.clockOut = async (req, res) => {
         const today = getTodayDate();
 
         const attendance = await Attendance.findOne({
-            where: { user_id: userId, date: today }
+            where: { user_id: userId, date: today },
+            order:[["createdAt", "DESC"]]
         })
         if (!attendance) {
             return res.status(400).json({
@@ -49,7 +51,7 @@ exports.clockOut = async (req, res) => {
         }
         if (attendance.clock_out) {
             return res.status(400).json({
-                message: "Already Clocked-Out Today"
+                message: "Already Clocked-Out Please Clock-In again"
             });
         }
 
@@ -58,12 +60,17 @@ exports.clockOut = async (req, res) => {
         const clockInTime = new Date(attendance.clock_in)
         const clockOutTime = new Date();
 
+        const breakTime = 1
+
         const diff = clockOutTime - clockInTime
 
         const totalHours = (diff / (1000 * 60 * 60)).toFixed(2);
 
+        const effectiveHours = totalHours - breakTime
+
         await attendance.update({
             clock_out: clockOutTime,
+            effective_hours: effectiveHours,
             total_hours: totalHours
         })
         res.status(200).json({
